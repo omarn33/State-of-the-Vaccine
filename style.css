@@ -5,6 +5,7 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
 }
 
 #title-section {
@@ -52,33 +53,61 @@ body {
 }
 
 
-/* body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
+#overview-section {
+    padding: 5% 7.5% 5%;
+    height: 100vh;
+    width: 100vw;
+    color: navy;
+}
+
+#slide-header {
+    font-weight: 700;
+    font-size: calc(2em + 1vw);
+}
+
+#mini-header {
+    padding-top: 3.0%;
+    padding-bottom: 3.0%;
+}
+
+#bullet-point1, #bullet-point2, #bullet-point3 {
+    padding-left: 5%;
+    padding-bottom: 2.75%;
+}
+
+#bullet-point1 {
+    color: #cc0000;
+}
+
+#bullet-point2 {
+    color: #6aa84f;
+}
+
+#bullet-point3 {
+    color: #3c78d8;
+}
 
 
-/*
-    Source: https://chartio.com/resources/tutorials/how-to-resize-an-svg-when-the-window-is-resized-in-d3-js/
-*/
+
+
 #covid-before-map-section {
-    padding: 2.5% 7.5% 0%;
+    padding: 5% 7.5% 0%;
     background-color: seashell;
     color: navy/* #0F2040*/;
 }
 
+
 #vaccination-section {
-    padding: 2.5% 7.5% 0%;
+    padding: 5% 7.5% 0%;
     background-color: #0F2040; /*002855*/
     color: white;
 }
 
+
 #covid-after-map-section {
-    padding: 2.5% 7.5% 0%;
+    padding: 5% 7.5% 0%;
     background-color: seashell; /*002855*/
-    color: #0F2040;
+    color: navy;
 }
 
 .svg-container {
@@ -87,27 +116,8 @@ body {
     justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
-/* .svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
-
-
-
-
-/* #canvas {
-    height: 100vh;
-    width: 100vw;
-} */
 
 #tooltip {
     visibility: hidden;

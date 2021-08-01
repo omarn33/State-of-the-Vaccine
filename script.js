@@ -320,7 +320,7 @@ let drawMap = (displayCovidCases, displayDefaultOption, displayBefore, locationI
           //you can add this type value below to override that default
           type: d3.annotationCalloutCircle,
           note: {
-            label: "States such as Indiana faced increasing cases due to relaxed restrictions on COVID-19 protols.",
+            label: "States such as Indiana faced increasing cases due to relaxed restrictions on COVID-19 protocols.",
             title: "Midwest Serge",
             wrap: 190
           },
@@ -337,7 +337,7 @@ let drawMap = (displayCovidCases, displayDefaultOption, displayBefore, locationI
             //you can add this type value below to override that default
             type: d3.annotationCalloutCircle,
             note: {
-              label: "Populated cities such as LA, Chicago, and New York all suffered from skyrocketing COVID cases.",
+              label: "Populated cities such as L.A, Chicago, and New York all experienced skyrocketing COVID cases.",
               title: "Populated Cities",
               wrap: 190
             },
