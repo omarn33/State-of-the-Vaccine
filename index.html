@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;800&display=swap"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;500&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet" />
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+	<!-- TopoJSON -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"
+		integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
+
+	<!-- Annotation Library -->
+	<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
+	<title>COVID-19 Vaccination Analysis</title>
+</head>
+
+<body>
+
+	<!--
+        Title Section:
+        - title
+        - description
+        - background image
+    -->
+	<section id="title-section">
+		<div id="covid-background-image">
+			<div id="overlay">
+				<h1 class="animate__animated animate__fadeInUp animate__delay-1s">State of the Vaccine.</h1>
+				<p class="animate__animated animate__fadeInUp animate__delay-2s">An in-depth analysis on the
+					effectiveness
+					of COVID
+					Vaccines in the U.S.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tooltip Features -->
+	<div id="tooltip">
+		<h1 id="tooltip-header"></h1>
+		<hr id="tooltip-hr">
+		<h2 id="tooltip-date"></h2>
+		<h3 id="cases"></h3>
+		<h3 id="cases-avg"></h3>
+		<h3 id="cases-avg-per-100k"></h3>
+		<br>
+		<h3 id="deaths"></h3>
+		<h3 id="deaths-avg"></h3>
+		<h3 id="deaths-avg-per-100k"></h3>
+	</div>
+
+
+	<section id="before-vaccine-numbers-section">
+		<h1>1) Before the Vaccine</h1>
+		<h2 class="animate__animated animate__fadeIn">Total Cases</h2>
+		<h2 class="animate__animated animate__fadeIn">Total Deaths</h2>
+		<h2 class="animate__animated animate__fadeIn">Total Hospitalizations</h2>
+	</section>
+
+	<section id="covid-before-map-section">
+		<h1>1) Before the Vaccine</h1>
+		<p class="animate__animated animate__fadeIn">
+			Decemeber 12th, 2020, a day before the vaccine was to begin being distributed, the United States witnessed a
+			serge of cases across the country. The virus was nearing its peak and the country was in full lockdown.
+		</p>
+
+		<!-- Radio Buttons -->
+		<div class="btn-group btn-group-md" role="group">
+			<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+			<label class="btn btn-outline-dark" for="btnradio1"
+				onclick="drawMap(true, true, true, '#slide1');">Cases</label>
+
+			<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+			<label class="btn btn-outline-dark" for="btnradio2"
+				onclick="drawMap(true, false, true, '#slide1');">Deaths</label>
+		</div>
+
+
+		<!-- <svg id="canvas"></svg> -->
+		<div id="slide1" class="svg-container">
+		</div>
+
+	</section>
+
+	<section id="vaccination-section">
+		<h1>2) Vaccine Distribution</h1>
+		<p class="animate__animated animate__fadeIn">
+			From Decemeber 13th, 2020 onwards, vaccines were being distributed throughout the United States.
+		</p>
+
+		<!-- Radio Buttons -->
+		<div class="btn-group btn-group-md" role="group2">
+			<input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" checked>
+			<label class="btn btn-outline-light" for="btnradio3" onclick="drawMap(false, true, false, '#slide2');">Fully
+				Vaccinated</label>
+
+			<input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off">
+			<label class="btn btn-outline-light" for="btnradio4" onclick="drawMap(false, false, false, '#slide2');">One
+				Dose</label>
+		</div>
+
+		<div id="slide2" class="svg-container">
+		</div>
+
+	</section>
+
+	<section id="covid-after-map-section">
+		<h1>3) After the Vaccine</h1>
+		<p class="animate__animated animate__fadeIn">
+			After vaccine distribution for nearly half a year, COVID-19 began to. However, states with lower vaccination
+			rates witnessed increasing COVID-19 cases.
+		</p>
+
+		<!-- Radio Buttons -->
+		<div class="btn-group btn-group-md" role="group3">
+			<input type="radio" class="btn-check" name="btnradio3" id="btnradio5" autocomplete="off" checked>
+			<label class="btn btn-outline-dark" for="btnradio5" onclick="drawMap(true, true, false, '#slide3');">Cases
+			</label>
+
+			<input type="radio" class="btn-check" name="btnradio3" id="btnradio6" autocomplete="off">
+			<label class="btn btn-outline-dark" for="btnradio6" onclick="drawMap(true, false, false, '#slide3');">Deaths
+			</label>
+		</div>
+
+		<div id="slide3" class="svg-container">
+		</div>
+
+	</section>
+
+	<!-- Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+	<!-- Custom JS -->
+	<script defer src='script.js'></script>
+
+
+</body>
+
+</html>

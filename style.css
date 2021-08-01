@@ -1,0 +1,160 @@
+/* Title Section 
+- Hero Background Tutorial:
+  Source: https://www.youtube.com/watch?v=QA8yjuS9CQg
+*/
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+#title-section {
+    margin: 0;
+    overflow-x: hidden;
+}
+  
+#covid-background-image {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("images/covid-2.jpg");
+}
+  
+#overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+  
+#overlay h1 {
+    font-size: 7.0rem;
+    letter-spacing: 0px;
+    line-height: 1.5;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    margin: 0 0 5px;
+}
+  
+#overlay p {
+    margin: 0;
+    font-size: 2.0rem;
+    line-height: 1.5;
+    font-family: Montserrat, sans-serif;
+}
+
+
+/* body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/*
+    Source: https://chartio.com/resources/tutorials/how-to-resize-an-svg-when-the-window-is-resized-in-d3-js/
+*/
+#covid-before-map-section {
+    padding: 2.5% 7.5% 0%;
+    background-color: seashell;
+    color: navy/* #0F2040*/;
+}
+
+#vaccination-section {
+    padding: 2.5% 7.5% 0%;
+    background-color: #0F2040; /*002855*/
+    color: white;
+}
+
+#covid-after-map-section {
+    padding: 2.5% 7.5% 0%;
+    background-color: seashell; /*002855*/
+    color: #0F2040;
+}
+
+.svg-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* .svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+
+
+
+/* #canvas {
+    height: 100vh;
+    width: 100vw;
+} */
+
+#tooltip {
+    visibility: hidden;
+
+    z-index: 10;
+    position: absolute;
+    height: auto;
+    width: auto;
+    
+    
+    font-family: Montserrat, sans-serif;
+    border: 2px solid lightgrey;
+    border-radius: 15px;
+
+    text-align: left;
+    padding: 1% 1% 1%;
+    background-color: white;
+}
+
+#tooltip-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+#tooltip-hr {
+    border: none;
+    height: 3px;
+    width: auto;
+    background-color: red;
+    margin: 0;    
+}
+
+#tooltip-date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#tooltip #cases, #cases-avg, #cases-avg-per-100k, #deaths, #deaths-avg, #deaths-avg-per-100k {
+    font-size: 16px;
+}
+
+
+.county:hover {
+    z-index: 10;
+    stroke: black;
+    stroke-width: 2.0px;
+    opacity: 1.0;
+}
