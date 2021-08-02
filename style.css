@@ -88,14 +88,11 @@ body {
 }
 
 
-
-
 #covid-before-map-section {
     padding: 5% 7.5% 0%;
     background-color: seashell;
     color: navy/* #0F2040*/;
 }
-
 
 #vaccination-section {
     padding: 5% 7.5% 0%;
@@ -103,11 +100,35 @@ body {
     color: white;
 }
 
-
 #covid-after-map-section {
     padding: 5% 7.5% 0%;
     background-color: seashell; /*002855*/
     color: navy;
+}
+
+#conclusion-section {
+    padding: 5% 7.5% 5%;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background-color: #002855;
+}
+
+#bullet-point4, #bullet-point5, #bullet-point6 {
+    padding-left: 5%;
+    padding-bottom: 2%;
+}
+
+#bullet-point4 {
+    color: #e06666;
+}
+
+#bullet-point5 {
+    color: #93c47d;
+}
+
+#bullet-point6 {
+    color: #6fa8dc;
 }
 
 .svg-container {
