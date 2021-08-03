@@ -1,8 +1,10 @@
 # State of the Vaccine
+**[Live Demo]** 
+
 A narrative visualization illustrating the effectiveness of the COVID-19 vaccine in the United States.
 The webpage utilizes various choropleth maps to illustrate the difference in cases and deaths before and after the vaccine was distributed.
 
-**[Live Demo]** 
+
 
 ### Libraries & Languages:
 - D3.js
